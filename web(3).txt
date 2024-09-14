@@ -1,0 +1,3 @@
+1.我自己编写了一些代码，但是一直不显示想要的内容，麻烦一番，直到我和老师的代码对比才发现，我把script写在了head里，所以Console一直显示：77 Uncaught TypeError: Cannot set properties of null (setting 'textContent')。
+2.我写script时发现只要有一处报错连带其他script代码的效果都不会显现。查阅得知javaScript报错后，在相同的script标签中的js代码，会受到影响；在新的script标签中的js代码，不会受到影响！
+3.还没学会textContent如何换行。

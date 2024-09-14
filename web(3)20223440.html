@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>毛婷立20223440</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-shadow: 8px 0px 8px 1px gray;
+      border-radius: 10px;
+      }
+    body{    
+            position: absolute;           
+            width: 100% ;
+            height: 100% ;
+            background-color: brown;
+    }
+
+    header{
+      height:20%;
+      background-color: aqua;
+    }
+
+    p{
+      height:60%;
+      background-color: yellow;
+    }
+    footer{
+      height:20%;
+      background-color: beige;
+
+    }
+
+    .text{
+        font-size: 3vw;
+        text-align: left;
+        color:black;
+        text-shadow:2px 0 rgba(255, 180, 180, 0.5);
+
+     } 
+    .xcss{
+      box-shadow: 8px 0px 8px 1px gray;
+      border-radius: 10px;
+      font-size: 5vw;
+    }      
+ .xcss:hover{
+      background: linear-gradient(to right, purple, pink);
+    } 
+  
+  </style>
+ 
+</head>
+<body>   
+  <header class="text">开头</header>
+  <p class="text xcss">中间</p>
+  <footer class="text">结尾</footer>
+
+  <script >  
+    var now = new Date();
+    var nowDate = now.getDate() ;
+    let headerDom = document.querySelector('header') ;
+    headerDom.textContent =  now+"今年是"+nowDate+"号";
+    let luckN=parseInt(Math.random()*9);
+    let pDom = document.querySelector('p') ;
+    pDom.textContent = '你的幸运数：' + luckN ;
+    let footerDom = document.querySelector('footer');
+    footerDom.textContent= "页面渲染时间：" + (now-new Date())+'ms';
+     </script>  
+</body>
+
+</html>
+
