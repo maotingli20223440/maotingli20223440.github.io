@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>JavaScript</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      }
+    body{    
+            position: absolute;
+           /* overflow: hidden; */  
+            /* width: calc(100% ); */              
+            width: 100% ;
+            height: 100% ;
+            background-color: rgb(255, 122, 122);
+    }
+
+    header{
+      height:20%;
+      background-color: aqua;
+    }
+
+    p{
+      height:60%;
+      background-color: rgb(255, 255, 6);
+    }
+    footer{
+      height:20%;
+      background-color: beige;
+
+    }
+  </style>
+  <script >  
+    var timestamp = 0;
+    var date = new Date(timestamp);
+    // 表示获得一个距离epoch纪元有 0秒的时间。
+    var dateTimeString = date.toLocaleString();
+    document.write("北京起始时间 ："+dateTimeString); </script>  
+</head>
+<body>   
+<header>头</header>
+<p >
+1kb好小<br>
+</p>
+<footer >尾</footer>
+
+</body>
+
+</html>
+
+毛婷立20223440
+回顾了以前学过的一些web知识
+写了代码使body全屏
+并输出了时间戳。
+绝对定位能使高度不定的父DIV的子标签高度100%显示，
+height指的是元素本身的高度，不包括padding、border、margin。
+innerHeight包括元素自身的高度+padding部分。
+outerHeight高度为：元素自身高度 + padding + border ；如果参数为true时，高度为：元素自身高度 + padding + border +margin。
+输出内容document.write 可用于直接向 HTML 输出流写内容。简单的说就是直接在网页中输出内容。
+时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数
