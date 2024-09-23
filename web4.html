@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>毛婷立20223440</title>
+<style>
+        *{
+      margin: 0;
+      padding: 0;
+      box-shadow: 2px 0px 2px 1px gray;
+      border-radius: 10px;
+      }
+    body{    
+            position: absolute;           
+            width: 100% ;
+            height: 100% ;
+            background-color: brown;
+    }
+
+    header{
+      height:20%;
+      background-color: aqua;
+    }
+
+    .contenter{
+      height:60%;
+      background-color: yellow;
+    }
+    footer{
+      height:20%;
+      background-color: beige;
+
+    }
+    
+
+
+    .text{
+        font-size: 4vw;
+        text-align: left;
+        color:black;
+        text-shadow:2px 0 rgba(255, 180, 180, 0.5);
+
+     } 
+
+</style>
+  
+</head>
+<header class="text">随机单词</header>
+
+<div class="contenter text">
+    <p id="en">abandon</p>
+    <p id="pr">/ə'bændən/</p>
+    <p id="cn">vt.离弃,丢弃;遗弃,抛弃;放弃</p>
+    <button id="loadCet" class="text">读入单词</button>
+    <button id="randWord"class="text">随机单词</button>
+</div>
+
+<footer class="text">毛婷立20223440</footer>
+
+<script>
+    let cet6String = '';
+    
+    document.getElementById('loadCet').addEventListener('click', loadWords);
+    document.getElementById('randWord').addEventListener('click', displayRandomWord);
+
+    async function loadWords() {
+        try {
+            const response = await fetch('cet6.txt');
+            cet6String = await response.text();
+        } catch (error) {
+            console.error('Error loading file:', error);
+            displayMessage('加载单词文件失败，请检查文件路径。');
+        }
+    }
+
+    function displayRandomWord() {
+        if (cet6String.length === 0) {
+            displayMessage('你要先读入单词！');
+        } else {
+            const arr = cet6String.split('\n'); // 更改为换行符适应不同的平台
+            const randIndex = Math.floor(Math.random() * arr.length);
+            const str = arr[randIndex];
+
+            const [en, pr, cn] = parseWord(str);
+            document.getElementById('en').textContent = en;
+            document.getElementById('pr').textContent = pr;
+            document.getElementById('cn').textContent = cn;
+        }
+    }
+
+    function parseWord(wordString) {
+        const parts = wordString.split('\t');
+        return [parts[0], parts[1], parts[2]];
+    }
+
+    function displayMessage(message) {
+        document.querySelector('footer').textContent = message;
+    }
+  </script>
+</html>
+
+
+
