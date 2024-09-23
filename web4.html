@@ -69,16 +69,15 @@
             const response = await fetch('cet6.txt');
             cet6String = await response.text();
         } catch (error) {
-            console.error('Error loading file:', error);
-            displayMessage('加载单词文件失败，请检查文件路径。');
+            displayMessage('读入失败');
         }
     }
 
     function displayRandomWord() {
         if (cet6String.length === 0) {
-            displayMessage('你要先读入单词！');
+            displayMessage('请先读入单词！');
         } else {
-            const arr = cet6String.split('\n'); // 更改为换行符适应不同的平台
+            const arr = cet6String.split('\r\n'); 
             const randIndex = Math.floor(Math.random() * arr.length);
             const str = arr[randIndex];
 
@@ -86,6 +85,7 @@
             document.getElementById('en').textContent = en;
             document.getElementById('pr').textContent = pr;
             document.getElementById('cn').textContent = cn;
+            document.querySelector('footer').textContent = ('毛婷立20223440');
         }
     }
 
