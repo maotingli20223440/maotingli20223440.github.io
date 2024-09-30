@@ -1,0 +1,8 @@
+if( Model.pos < CET6.length -1){
+            Model.pos ++ ;
+}else{
+            Model.pos = 0 ;
+        }
+可以简化成：
+ Model.pos =(Model.pos+1)%CET6.length ;
+2.使用了forEach
