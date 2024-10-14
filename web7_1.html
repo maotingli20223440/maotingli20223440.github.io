@@ -87,10 +87,10 @@
     });
 //登录
     document.getElementById('denglu').addEventListener('click', function () {
-        const username = document.querySelector('input[name="user"]').value;
-        const password = document.querySelector('input[name="pass"]').value;
+        let username = document.querySelector('input[name="user"]').value;
+        let password = document.querySelector('input[name="pass"]').value;
 // 登录验证
-        const foundUser = registeredUsers.find(user => user.username === username && user.password === password);
+        let foundUser = registeredUsers.find(user => user.username === username && user.password === password);
         if (foundUser) {
 //显现跳转按钮          
            document.getElementById("enter").style.display="block";
