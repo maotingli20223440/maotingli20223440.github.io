@@ -75,27 +75,27 @@
     }
 //注册
     document.getElementById('zhuce').addEventListener('click', function () {
-        let username = document.querySelector('input[name="user"]').value;
-        let password = document.querySelector('input[name="pass"]').value;
+        let username = select('input[name="user"]').value;
+        let password = select('input[name="pass"]').value;
         if (username && password) {
             registeredUsers.push({ username: username, password: password });
             localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
-            document.querySelector('header').textContent = username + '注册成功！';
+            select('header').textContent = username + '注册成功！';
         } else {
-            document.querySelector('header').textContent = '注册失败！请输入完整信息';
+            select('header').textContent = '注册失败！请输入完整信息';
         }
     });
 //登录
     document.getElementById('denglu').addEventListener('click', function () {
-        let username = document.querySelector('input[name="user"]').value;
-        let password = document.querySelector('input[name="pass"]').value;
+        let username = select('input[name="user"]').value;
+        let password = select('input[name="pass"]').value;
 // 登录验证
         let foundUser = registeredUsers.find(user => user.username === username && user.password === password);
         if (foundUser) {
 //显现跳转按钮          
            document.getElementById("enter").style.display="block";
         } else {
-            document.querySelector('header').textContent = '登录失败！请重新输入';
+            select('header').textContent = '登录失败！请重新输入';
         }
 
     });
