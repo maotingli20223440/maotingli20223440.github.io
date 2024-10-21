@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毛婷立20223440</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 0 pink;
+            box-shadow: 1px 0px 1px 1px gray;
+            border-radius: 7px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 8vh;
+        }
+
+        body {
+            position: absolute;
+            width: 100%;
+            height: 99vh;
+            background-color: brown;
+        }
+
+        header {
+            height: 20%;
+            background-color: aqua;
+        }
+
+       .contenter {
+            height: 70%;
+            background-color: cornsilk;
+        }
+
+        footer {
+            height: 10%;
+            background-color: plum;
+        }
+
+        button {
+            font-size: 10vh;
+        }
+
+        input {
+            font-size: 10vh;
+        }
+    </style>
+    <script>
+    let Model = { 
+        timerBegin : new Date() ,
+     } ;   
+        Model.CET6 = [] ;
+        let createCET6 = function(s){
+        let cetArr = s.split('\n') ;
+        for(let i=0;i<cetArr.length;i++){
+            let wordArr = cetArr[i].split('\t');
+            let obj = {} ;
+            obj.en = wordArr[0] ;
+            obj.pn = wordArr[1] ;
+            obj.cn = wordArr[2] ;
+            Model.CET6.push(obj) ;
+      }
+    }//createCET结束
+
+    let cet6String = "a	/ei/	art.一(个);每一(个);(同类事物中)任一个\nabandon	/ə'bændən/	vt.离弃,丢弃;遗弃,抛弃;放弃\nabdomen	/æb'dəumen/	n.腹,下腹(胸部到腿部的部分)\nabatement	/ə'beitmənt/	n.减(免)税,打折扣,冲销\nabide	/ə'baid/	vi.(abode,abided)(by)遵守;坚持;vt.忍受,容忍\nability	/ə'biliti/	n.能力;本领;才能,才干;专门技能,天资\nable	/'eibl/	a.有(能力、时间、知识等)做某事,有本事的\nabnormal	/æb'nɔ:məl/	a.反常的,不正常的,不规则的\naboard	/ə'bɔ:d/	ad.&prep.在船(飞机、车)上;ad.上船(飞机、车)\nabolish	/ə'bɔliʃ/	vt.废除(法律、习惯等);取消\nabound	/ə'baund/	vi.大量存在;(~in,~with)充满,富于\nabout	/ə'baut/	ad.在周围;大约prep.关于;在周围a.准备\nabove	/ə'bʌv/	a.上述的ad.在上面,在前文prep.在..之上,高于\nabroad	/ə'brɔ:d/	ad.到国外,在国外;在传播,在流传\nabrupt	/ə'brʌpt/	a.突然的,出其不意的;(行为等)粗鲁无礼的\nabsence	/'æbsəns/	n.缺乏,不存在;缺席,不在场;缺席的时间\nabsent	/'æbsənt,æb'sent/	a.缺席的;缺乏的,不存在的;心不在焉的\nabsolute	/'æbsəlju:t/	a.绝对的,完全的;确实的,肯定的\nabsorb	/əb'sɔ:b,-'zɔ:b/	vt.吸收(水、光、蒸汽等）;使全神贯注;吞并/兼并\nabstract	/'æbstrækt/	a.抽象的n.摘要,文摘,梗概vt.提取;摘录要点\nabsurd	/əb'sə:d/	a.荒谬的,荒诞的,荒唐可笑的;不合理的\nabundance	/ə'bʌndəns/	n.丰富,充裕,大量\nabundant	/ə'bʌndənt/	a.大量(充足)的;(in)丰富(富裕)的\nabuse	/ə'bju:z,ə'bju:s/	vt.滥用;虐待,辱骂;诋毁n.滥用;恶习;弊端\nacademic	/,ækə'demik/	a.学院的,学术性的;大学的;理论的\nacademy	/ə'kædəmi/	n.(高等)专科院校;学术社团,协会,研究院\naccelerate	/ək'seləreit/	v.使加速,使增速,促进vi.加快,增加\naccent	/'æksənt,æk'sent/	n.口音,腔调;重音(符号)vt.重读\naccept	/ək'sept/	vt.接受,领受;认可,同意vi.同意,认可\nacceptable	/ək'septəbl/	adj.可接受的,合意的" ;
+   createCET6(cet6String) ;
+
+        let pos = 0 ;
+        function printWord(){
+            select('p#en').textContent = Model.CET6[pos].en ;
+            select('p#pn').textContent = Model.CET6[pos].pn ;
+            select('p#cn').textContent = Model.CET6[pos].cn ;
+            select('footer').textContent = '你选择了第 '+ (pos+1) + ' 个单词' ;
+        }
+    </script> 
+</head>
+
+<body>
+    <header >随机单词 </header>
+    <div class="contenter"id="enroll">
+        <button id="zhuce">注册</button>
+        <button id="denglu">登录</button>
+        <p>用户<input type="text" name="user" required/></p>
+        <p>密码<input type="password" name="pass" required/></p>
+
+    </div>
+    <div class="contenter" id="enter"style="display: none;">
+        <button id="randWord" >随机单词</button>
+        <button id="firstWord">第一单词</button>
+        <button id="nextWord" >单词继续</button>
+        <button id="lastWord" >最后单词</button>
+        <p id="en">abandon</p>
+        <p id="pn">/ə'bændən/</p>
+        <p id="cn">vt.离弃,丢弃;遗弃,抛弃;放弃</p>
+    
+    </div>
+    
+    <footer >毛婷立20223440</footer>
+    
+    <script>
+        select('button#firstWord').onclick = function(word){
+            pos = 0 ;
+            printWord() ;
+            word.preventDefault() ;
+    
+        }
+        
+        select('button#randWord').onclick = function(){
+            
+            pos =Math.floor(Model.CET6.length * Math.random());
+            printWord() ;
+        } 
+        select('button#nextWord').onclick = function(){
+            pos =(pos+1)%Model.CET6.length ;
+            printWord() ;
+        } 
+        select('button#lastWord').onclick = function(){
+            pos = Model.CET6.length - 1  ;
+            printWord() ;
+        }
+    
+        function select(s){
+            let dom = document.querySelector(s) ;
+            return dom ;
+        }
+      
+    fetch('cet/cet1.txt') //读取cet/cet1.txt
+    .then(resp => resp.text())
+    .then(txt => {
+        Model.CET6 = [] ;
+        createCET6(txt) ;
+            select('header').textContent = '已读取'+Model.CET6.length+'个单词！';
+    }) ;
+    setTimeout(function(){ 
+        fetch('cet/cet2.txt') //读取cet/cet2.txt
+        .then(resp => resp.text())
+        .then(txt => {
+         createCET6(txt) ;
+         select('header').textContent = '已读取'+ Model.CET6.length +'个单词！';
+    }) ;
+    } , 2*1000); 
+    setTimeout(function(){
+        fetch('cet/cet3.txt')
+        .then(res => res.text())
+        .then(txt => {
+            createCET6(txt) ;
+            select('header').textContent = '最终读取'+ Model.CET6.length +'个单词！';
+        } );
+    } , 3 * 1000) ;
+    let users = [];
+    if (localStorage.getItem('users')) {
+        users = JSON.parse(localStorage.getItem('users'));
+    }
+//注册
+    document.getElementById('zhuce').addEventListener('click', function () {
+        let username = select('input[name="user"]').value;
+        let password = select('input[name="pass"]').value;
+        if (username && password) {
+            users.push({ username: username, password: password });
+            localStorage.setItem('users', JSON.stringify(users));
+            select('header').textContent = username + '注册成功！';
+        } else {
+            select('header').textContent = '注册失败！请输入完整信息';
+        }
+    });
+//登录
+    document.getElementById('denglu').addEventListener('click', function () {
+        let username = select('input[name="user"]').value;
+        let password = select('input[name="pass"]').value;
+// 登录验证
+        let foundUser = users.find(user => user.username === username && user.password === password);
+        if (foundUser) {       
+           document.getElementById("enter").style.display="block";
+        select('header').textContent = '登录成功!';
+        document.getElementById("enroll").style.display="none";
+        } else {
+            select('header').textContent = '登录失败！请重新登入';
+        }
+
+    });
+
+
+    function select(s) {
+        let dom = document.querySelector(s);
+        return dom;
+    }
+</script>
+</body>
+</html>
