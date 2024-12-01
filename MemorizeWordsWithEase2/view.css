@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 10px;
+}
+body{
+ font-size: calc(10px+1vh);
+ height: 98vh ;    
+ position: relative;
+}
+header{font-size: 2em;
+       height: 15% ;
+       position: relative;
+       background-color: aquamarine;
+       width: 90% ;
+       border: 2px solid gray;
+       left: 5% ;
+}
+nav{ height: 6% ;}
+nav button{
+    font-size: 1.2em;
+   }
+button.small{
+    width: 30%;
+    padding: 0.1em 0.2em;  
+}
+button{
+    transition:0.5s;
+    display: inline;
+    border: none;
+    color:blue;
+    text-shadow: 1px 0 pink;
+    box-shadow: 1px 0px 1px 1px gray;
+}
+button:hover{
+    color:black;
+}
+button.big{
+    width: 45%;
+    padding: 0.1em 0.5em;  
+}
+main{
+    margin-top: 1em;
+    font-size: 1.6em;
+    height: 60% ;
+    position: relative;
+}
+main p#en{
+    font-size: 1.6em;
+    color:lightblue;
+    text-shadow: 2px 2px gray ;
+}
+main p#pn{
+    font-size: 1.2em;
+    color:lightseagreen;
+   }
+form{
+    position: absolute ;
+    width: 90% ;
+    height: 50% ;
+    border: 2px solid gray;
+    left: 5% ;
+    background-color: antiquewhite;
+    font-size: 1.6em ;
+}
+form input{
+    font-size: 1.1em ;
+    width: 6em;
+}
+form button{
+    font-size: 1.5rem ;
+    margin-right: 2em;
+}
+footer{
+    height: 20% ;
+    top: 65%;
+    position: absolute ;
+    font-size:1.2em;
+    background-color: plum;
+    width: 90% ;
+    border: 2px solid gray;
+    left: 5% ;
+
+}
+span#level{
+    display: block;
+    position: absolute;
+    right:20px;
+    top:1px;
+    color:blue;
+    font-size: 0.5em;
+}
+p.cn{
+  border:1px solid blue ;
+  background: radial-gradient(circle, pink,antiquewhite);
+  cursor: pointer;
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
+}
+p.cn.right{
+  background: radial-gradient(circle, aquamarine, white);
+  color: brown ;
+}
+p.cn.wrong{
+  background: radial-gradient(circle, brown, white);
+  color:black;
+}
+p.cn:hover{
+    color: blue ;
+}
+header span#response{
+    font-size: 0.8em;
+    color: red;
+    position: absolute;
+    right: 0.5em;
+    top:2em;
+}
+p#log{
+    background-color: gray;
+    color: white;
+    font-size: 0.65em;
+    padding: 5px 10px;
+    text-align: center;
+}
